@@ -38,6 +38,7 @@ const Products = () => {
                   rate={i.rating.rate}
                   image={i.image}
                   price={i.price}
+                  link={`/product/${i.id}/`}
                   key={i.id}
                 />
               </Grid>

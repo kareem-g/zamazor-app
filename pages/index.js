@@ -10,7 +10,7 @@ export default function Index() {
   return (
     <Box>
       <Navbar />
-      <Slider />
+      {/* <Slider /> */}
       <Products />
       <Footer />
     </Box>

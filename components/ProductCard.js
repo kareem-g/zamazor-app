@@ -24,7 +24,7 @@ const ProductCard = (props) => {
           sx={{ borderRadius: "6px" }}
         />
         <CardContent>
-          <Link href="/Cart">
+          <Link href={props.link}>
             <MUILink
               underline="none"
               variant="Button"
@@ -33,10 +33,10 @@ const ProductCard = (props) => {
               // noWrap
               sx={{
                 lineHeight: "28px",
-                mb: "40px",
+                mb: "45px",
                 color: "black",
                 cursor: "pointer",
-                fontSize: "22px",
+                fontSize: { lg: "20px", xs: "16px" },
                 maxHeight: "30px",
               }}
             >
@@ -49,6 +49,7 @@ const ProductCard = (props) => {
               display: "flex",
               flexDirection: "row",
               alignItems: "flex-start",
+              paddingTop: { xs: "10px" },
             }}
           >
             <Typography
@@ -59,7 +60,11 @@ const ProductCard = (props) => {
               sx={{ display: "flex", flexDirection: "row", fontWeight: "600" }}
             >
               <StarsRounded
-                style={{ color: "#FF9529", fontSize: "30", marginRight: "2px" }}
+                style={{
+                  color: "#FF9529",
+                  fontSize: { lg: "30px", xs: "24px" },
+                  marginRight: "2px",
+                }}
               />
               {props.rate}
             </Typography>
@@ -75,7 +80,15 @@ const ProductCard = (props) => {
             </Typography>
           </Stack>
 
-          <Typography variant="h4" color="#000" sx={{ mt: "16px" }}>
+          <Typography
+            variant="h4"
+            color="#000"
+            sx={{
+              marginTop: "16px",
+              fontSize: { lg: "22px", xs: "18px" },
+              fontWeight: "bold",
+            }}
+          >
             ${props.price}
           </Typography>
         </CardContent>

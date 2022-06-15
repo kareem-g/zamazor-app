@@ -1,32 +1,81 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
+import { Box, Card, Container, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
 const Slider = () => {
   return (
-    <Grid container alignItems="center" justifyContent="center" padding="15px">
+    <Box
+      sx={{ width: "50%", height: "100%" }}
+      justifyContent="center"
+      alignItems="center"
+    >
       <Carousel
         showIndicators={false}
         infiniteLoop={true}
         // dynamicHeight={true}
         showThumbs={false}
         showStatus={false}
-        showArrows={false}
-        swipeable={true}
-        emulateTouch={true}
-        autoPlay={true}
+        showArrows={true}
+        // swipeable={true}
+        // emulateTouch={true}
+        // autoPlay={true}
         interval={1500}
-        stopOnHover={true}
+        // stopOnHover={true}
       >
-        <div backgroundColor="#000">
-          <img src="https://via.placeholder.com/150x150" />
+        <div>
+          <Card
+            variant="div"
+            justifyContent="center"
+            alignItems="center"
+            sx={{
+              backgroundColor: "#000",
+            }}
+          >
+            <img
+              src="https://amymhaddad.s3.amazonaws.com/morocco-blue.png"
+              height="400px"
+              // width="auto"
+              loading="lazy"
+            />
+          </Card>
         </div>
-        <div backgroundColor="#000" width="10%" height="10%">
-          <img src="https://via.placeholder.com/150x150" />
+        <div>
+          <Card
+            variant="div"
+            justifyContent="center"
+            alignItems="center"
+            sx={{
+              backgroundColor: "#000",
+            }}
+          >
+            <img
+              src="https://amymhaddad.s3.amazonaws.com/oriental-tiles.png"
+              height="400px"
+              // width="auto"
+              loading="lazy"
+            />
+          </Card>
+        </div>
+        <div>
+          <Card
+            variant="div"
+            justifyContent="center"
+            alignItems="center"
+            sx={{
+              backgroundColor: "#000",
+            }}
+          >
+            <img
+              src="https://amymhaddad.s3.amazonaws.com/oriental-tiles.png"
+              height="400px"
+              width="auto"
+              loading="lazy"
+            />
+          </Card>
         </div>
       </Carousel>
-    </Grid>
+    </Box>
   );
 };
 
