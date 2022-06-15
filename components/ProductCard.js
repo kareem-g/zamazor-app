@@ -20,7 +20,7 @@ const ProductCard = (props) => {
           component="img"
           height="120"
           image={props.image}
-          alt="green iguana"
+          alt=""
           sx={{ borderRadius: "6px" }}
         />
         <CardContent>
@@ -36,8 +36,8 @@ const ProductCard = (props) => {
                 mb: "45px",
                 color: "black",
                 cursor: "pointer",
-                fontSize: { lg: "20px", xs: "16px" },
-                maxHeight: "30px",
+                // fontSize: { lg: "1em", xs: "1em" },
+                maxHeight: { lg: "40px", xs: "60px" },
               }}
             >
               {props.title}
@@ -50,19 +50,26 @@ const ProductCard = (props) => {
               flexDirection: "row",
               alignItems: "flex-start",
               paddingTop: { xs: "10px" },
+              // fontSize: { lg: "1em", xs: ".8em" },
             }}
           >
             <Typography
               variant="h8"
               color="#354259"
               alignItems="center"
-              fontSize="16px"
-              sx={{ display: "flex", flexDirection: "row", fontWeight: "600" }}
+              // fontSize="16px"
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                fontWeight: "600",
+                fontSize: { lg: "1rem", xs: ".8rem" },
+              }}
             >
               <StarsRounded
                 style={{
                   color: "#FF9529",
-                  fontSize: { lg: "30px", xs: "24px" },
+                  // fontSize: { lg: "1.5rem", xs: "12px" },
+                  fontSize: "22px",
                   marginRight: "2px",
                 }}
               />
@@ -74,7 +81,7 @@ const ProductCard = (props) => {
               alignItems="flex-end"
               display="flex"
               margin="3px"
-              fontSize="12px"
+              fontSize=".7rem"
             >
               ({props.count})
             </Typography>
@@ -86,6 +93,8 @@ const ProductCard = (props) => {
             sx={{
               marginTop: "16px",
               fontSize: { lg: "22px", xs: "18px" },
+              // fontSize: { lg: "1.5em", xs: "1em" },
+
               fontWeight: "bold",
             }}
           >

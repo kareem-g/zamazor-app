@@ -24,7 +24,7 @@ const Product = () => {
       <Box
         sx={{
           padding: "60px 30px",
-          display: { xs: "flex", lg: "block" },
+          display: { xs: "flex", md: "block" },
           justifyContent: { xs: "center" },
           alignItems: { xs: "center" },
         }}
@@ -34,7 +34,7 @@ const Product = () => {
           sx={{
             textTransform: "uppercase",
             fontWeight: "500",
-            display: { xs: "none", lg: "block" },
+            display: { xs: "none", md: "block" },
           }}
         >
           <Link passHref href="/">
