@@ -4,7 +4,7 @@ import React from "react";
 const Footer = () => {
   return (
     <Box
-      sx={{ backgroundColor: "#112B3C", padding: "10px", marginTop: "30px" }}
+      sx={{ backgroundColor: "#292d32", padding: "10px", marginTop: "30px" }}
     >
       <Typography
         display="flex"

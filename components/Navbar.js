@@ -113,6 +113,21 @@ const Navbar = (props) => {
               {drawer}
             </Drawer>
           </IconButton>
+          <Link to="/" passHref href="/">
+            <MUILink
+              color="#428cfd"
+              underline="none"
+              // textTransform="uppercase"
+              fontWeight="900"
+              style={{
+                // flexGrow: "1",
+                padding: "10px",
+                fontSize: { xs: "12px", md: "14px" },
+              }}
+            >
+              WintheMatch
+            </MUILink>
+          </Link>
           <Typography
             direction="row"
             style={{
@@ -123,18 +138,8 @@ const Navbar = (props) => {
               bottom: "0px",
               flexGrow: "1",
             }}
-            // sx={{ display: { xs: "none", md: "block" } }}
+            sx={{ display: { xs: "none", md: "block" } }}
           >
-            <Link to="/" passHref href="/">
-              <MUILink
-                color="#428cfd"
-                underline="none"
-                // textTransform="uppercase"
-                fontWeight="900"
-              >
-                WintheMatch
-              </MUILink>
-            </Link>
             <Link passHref href="/">
               <Button
                 variant="text"
