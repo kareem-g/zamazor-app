@@ -1,7 +1,12 @@
-html,
-body {
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
       background-color: #FFF; 
 }
@@ -11,11 +16,6 @@ a {
   text-decoration: none;
 }
 
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
 
   ::-webkit-scrollbar {
     width: 0px;
@@ -277,4 +277,14 @@ a {
     justify-content: center;
     margin-top: 25px;
   }
+}
+
+
+@media screen and (max-width: 640px)
+{
+    body, html{
+        width: 100vw;
+        overflow-x: hidden;
+        padding: 0;
+    }
 }

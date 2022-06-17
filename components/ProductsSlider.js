@@ -48,11 +48,7 @@ const ProductsSlider = ({ props }) => {
         Football Gear
       </Typography>
       <Box marginBottom="200px" className="box-wrapper">
-        <ScrollMenu
-          LeftArrow={LeftArrow}
-          RightArrow={RightArrow}
-          //   className="react-menu--wrapper"
-        >
+        <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
           {data.map((i) => (
             <Box
               key={i.id}
