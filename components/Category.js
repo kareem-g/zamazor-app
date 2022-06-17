@@ -33,44 +33,30 @@ const Category = () => {
 
   return (
     <>
-      <Box
-        justifyContent="center"
-        alignItems="center"
+      <Typography
         display="flex"
+        alignItems="center"
+        justifyContent="center"
         sx={{
-          width: { xs: "450px", md: "700px" },
-          height: { xs: "200px", md: "250px" },
-          padding: "15px",
-          borderRadius: "45px",
+          fontWeight: "bold",
+          color: "#292d32",
+          fontSize: { xs: "28px", lg: "38px" },
+          marginBottom: "35px",
         }}
       >
-        <Typography
-          sx={{
-            color: "#000",
-            fontWeight: "600",
-            fontSize: { xs: "28px", md: "38px" },
-            marginTop: "10px",
-          }}
-        >
-          All Category
-        </Typography>
-      </Box>
-      <Box justifyContent="center" alignItems="center" display="flex">
-        <Grid container spacing={10}>
-          {data.map((item) => (
-            <Grid key={item.id} item md={6}>
-              <Box key={item.id} variant="div">
-                <CategoryItem
-                  key={item.id}
-                  title={item.title}
-                  discount={item.discount}
-                  Color={item.color}
-                />
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+        All Categories
+      </Typography>
+      <div className="category-container">
+        {data.map((item) => (
+          <CategoryItem
+            key={item.id}
+            title={item.title}
+            discount={item.discount}
+            Color={item.color}
+            className="category-item"
+          />
+        ))}
+      </div>
     </>
   );
 };

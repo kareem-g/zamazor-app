@@ -6,45 +6,64 @@ import data from "../data.json";
 const Products = () => {
   return (
     <>
-      <Container>
+      <div>
         <Typography
           sx={{
             lineHeight: "28px",
+            display: "flex",
+            color: "#428cfd",
+            fontSize: "18px",
+            justifyContent: {
+              lg: "flex-start",
+              xs: "center",
+            },
+            alignItems: "center",
+            fontWeight: "500",
+            marginLeft: { xs: "0px", md: "80px" },
+            paddingTop: "30px",
+          }}
+          variant="h8"
+        >
+          Sport Gear
+        </Typography>
+        <Typography
+          sx={{
+            lineHeight: "28px",
+            display: "flex",
             color: "black",
-            cursor: "pointer",
-            fontSize: "22px",
+            fontSize: "32px",
             justifyContent: {
               lg: "flex-start",
               xs: "center",
             },
             alignItems: "center",
             fontWeight: "bold",
-            margin: "20px",
+            marginLeft: { xs: "0px", md: "80px" },
             paddingTop: "30px",
           }}
-          variant="body1"
+          variant="h8"
         >
-          Latest Products
+          Top Products
         </Typography>
-        <Grid container spacing={3}>
-          {/* <ProductCard title={} desc={} image={} price={} /> */}
 
+        <main className="grid">
           {data &&
             data.map((i) => (
-              <Grid item key={i.id} xs={6} md={4} lg={3}>
-                <ProductCard
-                  title={i.title}
-                  count={i.rating.count}
-                  rate={i.rating.rate}
-                  image={i.image}
-                  price={i.price}
-                  link={`/product/${i.id}/`}
-                  key={i.id}
-                />
-              </Grid>
+              <ProductCard
+                key={i.id}
+                id={i.id}
+                title={i.title}
+                count={i.rating.count}
+                rate={i.rating.rate}
+                image={i.image}
+                price={i.price}
+                link={`/product/${i.id}/`}
+              />
             ))}
-        </Grid>
-      </Container>
+          {/* <div key={i.id}> */}
+          {/* </div> */}
+        </main>
+      </div>
     </>
   );
 };

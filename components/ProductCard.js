@@ -1,28 +1,70 @@
-import { Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Checkbox,
+  IconButton,
+  Rating,
+  Stack,
+  Typography,
+} from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
 import { Link as MUILink } from "@mui/material";
-import { StarsRounded } from "@mui/icons-material";
+import {
+  Favorite,
+  FavoriteBorderOutlined,
+  FavoriteOutlined,
+  Hearing,
+  StarsRounded,
+} from "@mui/icons-material";
 
 const ProductCard = (props) => {
   return (
     <>
       <Card
         sx={{
-          maxWidth: 345,
-          padding: "10px",
-          // margin: "12px",
-          boxShadow: "2",
+          height: "440px",
+          width: "280px",
+          // padding: "10px",
+          marginBottom: "12px",
+          boxShadow: "0",
+          className: "product",
         }}
       >
-        <CardMedia
+        {/* <CardMedia
           component="img"
-          height="120"
+          // height="120"
           image={props.image}
           alt=""
           sx={{ borderRadius: "6px" }}
-        />
+          // width="50px"
+          height="250px"
+        /> */}
+
+        <Box
+          justifyContent="center"
+          alignItems="center"
+          display="flex"
+          overflow="hidden"
+          borderRadius="6px"
+          backgroundColor="#f9f9f9"
+          height="280px"
+          width="100%"
+        >
+          <img
+            src={props.image}
+            alt={props.title}
+            // width="auto"
+            justifyContent="center"
+            alignItems="center"
+            display="flex"
+            height="100px"
+          />
+        </Box>
+
         <CardContent>
           <Link href={props.link}>
             <MUILink
@@ -33,7 +75,7 @@ const ProductCard = (props) => {
               // noWrap
               sx={{
                 lineHeight: "28px",
-                mb: "45px",
+                mb: "15px",
                 color: "black",
                 cursor: "pointer",
                 // fontSize: { lg: "1em", xs: "1em" },
@@ -65,7 +107,18 @@ const ProductCard = (props) => {
                 fontSize: { lg: "1rem", xs: ".8rem" },
               }}
             >
-              <StarsRounded
+              {/* <StarsRounded
+                style={{
+                  color: "#FF9529",
+                  // fontSize: { lg: "1.5rem", xs: "12px" },
+                  fontSize: "22px",
+                  marginRight: "2px",
+                }}
+              /> */}
+              <Rating
+                name="read-only"
+                value={props.rate}
+                readOnly
                 style={{
                   color: "#FF9529",
                   // fontSize: { lg: "1.5rem", xs: "12px" },
@@ -73,7 +126,7 @@ const ProductCard = (props) => {
                   marginRight: "2px",
                 }}
               />
-              {props.rate}
+              {/* {props.rate} */}
             </Typography>
             <Typography
               variant="body2"
@@ -81,7 +134,7 @@ const ProductCard = (props) => {
               alignItems="flex-end"
               display="flex"
               margin="3px"
-              fontSize=".7rem"
+              fontSize=".8rem"
             >
               ({props.count})
             </Typography>
@@ -94,11 +147,19 @@ const ProductCard = (props) => {
               marginTop: "16px",
               fontSize: { lg: "22px", xs: "18px" },
               // fontSize: { lg: "1.5em", xs: "1em" },
-
               fontWeight: "bold",
             }}
           >
             ${props.price}
+            {/* <Checkbox
+              id={props.id}
+              sx={{
+                position: "relative",
+                left: "160px",
+              }}
+              icon={<FavoriteBorderOutlined />}
+              checkedIcon={<Favorite sx={{ color: "red" }} />}
+            /> */}
           </Typography>
         </CardContent>
       </Card>

@@ -10,16 +10,18 @@ const CategoryItem = (props) => {
   return (
     <>
       <Box
+        component="div"
+        display="flex"
         sx={{
-          width: { xs: "450px", md: "500px" },
+          justifyContent: "center",
+          alignItems: "center",
+          width: { xs: "450px", md: "800px" },
           height: { xs: "200px", md: "250px" },
           padding: "15px",
+          margin: "20px",
           borderRadius: "45px",
         }}
         backgroundColor={props.Color}
-        alignItems="center"
-        justifyContent="center"
-        display="flex"
       >
         <Stack
           alignItems="center"

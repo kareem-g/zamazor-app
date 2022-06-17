@@ -11,7 +11,12 @@ import React from "react";
 
 const FAQ = () => {
   return (
-    <Box justifyContent="center" alignItems="center">
+    <Box
+      justifyContent="center"
+      alignItems="center"
+      marginBottom="80px"
+      component="div"
+    >
       <Typography
         display="flex"
         alignItems="center"
@@ -25,16 +30,8 @@ const FAQ = () => {
       >
         Frequency Asked Question (FAQ)
       </Typography>
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        spacing={4}
-        sx={{
-          flexDirection: { xs: "column", lg: "col" },
-        }}
-      >
-        <Grid md={4} item>
+      <div className="faq-container">
+        <div className="faq-item">
           <Accordion
             sx={{
               width: "400px",
@@ -67,8 +64,8 @@ const FAQ = () => {
               </Typography>
             </AccordionDetails>
           </Accordion>
-        </Grid>
-        <Grid md={4} item>
+        </div>
+        <div className="faq-item">
           <Accordion
             sx={{
               width: "400px",
@@ -101,8 +98,8 @@ const FAQ = () => {
               </Typography>
             </AccordionDetails>
           </Accordion>
-        </Grid>
-        <Grid md={4} item>
+        </div>
+        <div className="faq-item">
           <Accordion
             sx={{
               width: "400px",
@@ -135,8 +132,43 @@ const FAQ = () => {
               </Typography>
             </AccordionDetails>
           </Accordion>
-        </Grid>
-      </Grid>
+        </div>
+
+        <div className="faq-item">
+          <Accordion
+            sx={{
+              width: "400px",
+              border: "hidden",
+              boxShadow: "0",
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMore />}
+              sx={{
+                backgroundColor: "#f9f9f9",
+                color: "#1B2430",
+                width: "400px",
+                border: "hidden",
+                borderRadius: "50px",
+              }}
+            >
+              <Typography>When Will i Receive my Refund?</Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                width: "400px",
+                borderRadius: "50px",
+              }}
+            >
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                eget.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </div>
+      </div>
     </Box>
   );
 };

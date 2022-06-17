@@ -236,6 +236,7 @@ const Navbar = (props) => {
               <Link passHref href="/Login">
                 <Button
                   variant="contained"
+                  to="/Login"
                   href="/Login"
                   sx={{
                     marginRight: "10px",

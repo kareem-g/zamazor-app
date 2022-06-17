@@ -11,6 +11,7 @@ import HorizontalScrollbar from "../components/HorizontalScrollbar";
 import WhyUs from "../components/WhyUs";
 import Category from "../components/Category";
 import FAQ from "../components/FAQ";
+import ProductsSlider from "../components/ProductsSlider";
 
 export default function Index() {
   return (
@@ -24,8 +25,9 @@ export default function Index() {
         <HorizontalScrollbar />
       </Box>
       <WhyUs />
-      {/* <Products /> */}
-      {/* <Category /> */}
+      <Products />
+      <ProductsSlider />
+      <Category />
       <FAQ />
       <Footer />
     </Box>
