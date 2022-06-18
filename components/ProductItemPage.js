@@ -11,6 +11,7 @@ import {
 import { Link as MUILink } from "@mui/material";
 import Link from "next/link";
 import { Favorite, FavoriteBorderOutlined } from "@mui/icons-material";
+import Reviews from "./Reviews";
 
 const ProductItemPage = (props) => {
   return (
@@ -288,6 +289,7 @@ const ProductItemPage = (props) => {
             </Box>
           </Box>
         </div>
+        <Reviews />
       </Box>
     </>
   );

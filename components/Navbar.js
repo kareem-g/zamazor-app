@@ -219,18 +219,18 @@ const Navbar = (props) => {
               direction="row"
               // sx={{ display: { xs: "none", md: "block" } }}
             >
-              <Link passHref href="/Signup">
+              <Link passHref href="/Cart">
                 <Button
                   variant="outlined"
-                  href="/Signup"
-                  startIcon={<SignpostOutlined />}
+                  href="/Cart"
+                  startIcon={<ShoppingCart />}
                   sx={{
                     marginRight: "10px",
                     color: "#428cfd",
                     textTransform: "none",
                   }}
                 >
-                  Sign up
+                  Cart
                 </Button>
               </Link>
               <Link passHref href="/Login">

@@ -17,6 +17,8 @@ const offerItem = (props) => {
           borderRadius: "45px",
         }}
         backgroundColor={props.Color}
+        overflow="hidden"
+        position="relative"
       >
         <Stack
           alignItems="flex-start"
@@ -69,6 +71,7 @@ const offerItem = (props) => {
             Buy Now
           </Box>
         </Stack>
+        <img src={props.img} alt="" className="offer-img" />
       </Box>
     </>
   );

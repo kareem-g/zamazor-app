@@ -32,24 +32,28 @@ const HorizontalScrollbar = ({ props }) => {
       title: "Football Gear",
       discount: 30,
       color: "#428cfd",
+      img: "/helmet.png",
     },
     {
       id: 2,
       title: "Baseball Gear",
       discount: 25,
       color: "#f97778",
+      img: "/shirt.png",
     },
     {
       id: 3,
       title: "Lacrosse",
       discount: 15,
       color: "#af85ee",
+      img: "/football.png",
     },
     {
       id: 4,
       title: "Fastpitch",
       discount: 20,
       color: "#61a3a1",
+      img: "/baseball.png",
     },
   ];
 
@@ -62,6 +66,7 @@ const HorizontalScrollbar = ({ props }) => {
             title={item.title}
             discount={item.discount}
             Color={item.color}
+            img={item.img}
           />
         </Box>
       ))}

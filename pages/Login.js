@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
+import Signin from "../components/Signin";
 
 const Login = () => {
-  return <div>Login</div>;
+  return (
+    <>
+      <Navbar />
+      <Signin />
+    </>
+  );
 };
 
 export default Login;

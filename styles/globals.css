@@ -8,7 +8,7 @@ html,
 body {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-      background-color: #FFF; 
+  background-color: #FFF; 
 }
 
 a {
@@ -21,6 +21,15 @@ a {
     width: 0px;
     background: transparent;  /* Optional: just make scrollbar invisible */
   }
+
+  @media screen and (max-width: 640px)
+{
+    body, html{
+        width: 100vw;
+        overflow-x: hidden;
+        padding: 0;
+    }
+}
 
   .right-arrow,
   .left-arrow {
@@ -65,11 +74,18 @@ a {
     margin-top: -330px;
   }
 
+  
+  .offer-img {
+    position: absolute;
+    height: 430px;
+    right: -80px;
+    margin-top: -315px;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-gap: 20px;
-    /* align-items: stretch; */
     padding: 40px;
     margin: 30px;
   }
@@ -126,15 +142,12 @@ a {
 
   .product-page-element {
     flex: 1;
-    /* border: 2px solid blueviolet; */
-    /* margin: 10px; */
  }
 
  .product-page-element:first-child {
   margin-Bottom: 20px;
  }
 
- 
  .product-details {
     display: flex; 
     flex-direction: row;
@@ -202,7 +215,15 @@ a {
     position: relative;
   }
 
-
+.loginPage { 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
  @media screen and (max-width:1200px) {
     .react-horizontal-scrolling-menu--scroll-container {
@@ -227,64 +248,50 @@ a {
       justify-content: center;
       align-items: center;
     }
+
+    .offer-img {
+      position: absolute;
+      /* width: 200px; */
+      height: 250px;
+      right: -40px;
+      /* top: 1px; */
+      margin-top: -200px;
+    }
   }
 
   @media screen and (max-width:1200px) {
   .product-page {
     display: flex; 
     flex-direction: column;
-    /* justify-content: center; */
   }
 
-  .product-details {
+  .product-details,
+  .product-details-item
+  {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    /* align-items: center; */
     justify-content: center;
   }
 
- 
 
   .product-details-item{
+    align-items: center;
     margin-top: 10px;
+  }
+
+  .product-details-title,
+  .product-details-price,
+  .product-price,
+  .product-details-btn  {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .product-details-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .product-details-price {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .product-price {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
   .product-details-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 25px;
   }
 }
 
-
-@media screen and (max-width: 640px)
-{
-    body, html{
-        width: 100vw;
-        overflow-x: hidden;
-        padding: 0;
-    }
-}
