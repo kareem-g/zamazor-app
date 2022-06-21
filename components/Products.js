@@ -1,9 +1,39 @@
 import { Container, Grid, Typography } from "@mui/material";
-import React from "react";
 import ProductCard from "./ProductCard";
 import data from "../data.json";
+import React, { useEffect, useState } from "react";
+import {
+  collection,
+  doc,
+  getDoc,
+  deleteDoc,
+  onSnapshot,
+  getDocs,
+  getFirestore,
+} from "firebase/firestore";
+import { db } from "../firebase";
 
 const Products = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let list = [];
+      try {
+        const querySnapshot = await getDocs(collection(db, "products"));
+        querySnapshot.forEach((doc) => {
+          list.push({ id: doc.id, ...doc.data() });
+        });
+        setData(list);
+        console.log(list);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  console.log(data);
   return (
     <>
       <div>
@@ -50,18 +80,16 @@ const Products = () => {
           {data &&
             data.map((i) => (
               <ProductCard
-                key={i.id}
-                id={i.id}
-                title={i.title}
-                count={i.rating.count}
-                rate={i.rating.rate}
-                image={i.image}
+                // key={i.id}
+                // id={i.id}
+                title={i.name}
+                count={i.count}
+                rate={i.rate}
+                image={i.img}
                 price={i.price}
-                link={`/product/${i.id}/`}
+                link={`/product/${i.productPrice}/`}
               />
             ))}
-          {/* <div key={i.id}> */}
-          {/* </div> */}
         </main>
       </div>
     </>

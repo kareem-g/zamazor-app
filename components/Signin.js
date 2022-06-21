@@ -1,23 +1,38 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
-import { authentication } from "../firebase";
-import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import nookies, { destroyCookie } from "nookies";
-import { parseCookies, setCookie } from "nookies";
 import { Google } from "@mui/icons-material";
+import { auth } from "../firebase";
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import {
+  getFirestore,
+  getDocs,
+  addDoc,
+  deleteDoc,
+  doc,
+  collection,
+} from "firebase/firestore";
+import { parseCookies, setCookie, destroyCookie } from "nookies";
 
 const Signin = () => {
+  const db = getFirestore();
+  const ColUsers = collection(db, "users");
+
   const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
 
-    signInWithPopup(authentication, provider)
+    signInWithPopup(auth, provider)
       .then((res) => {
-        console.log(
-          "Login successful Token: ",
-          res.user.accessToken
-          // "Response: ",
-          // res
-        );
+        if (res) {
+          addDoc(ColUsers, {
+            uid: res.user.uid,
+            email: res.user.email,
+            name: res.user.displayName,
+            provider: res.user.providerData[0].providerId,
+            photoUrl: res.user.photoURL,
+          }).catch((e) => {
+            console.log("error: ", e);
+          });
+        }
 
         if (res.user.accessToken) {
           const cookies = parseCookies();
@@ -27,7 +42,7 @@ const Signin = () => {
             path: "/",
           });
 
-          console.log("setCookie: ", res.user.accessToken);
+          // console.log("setCookie: ", res.user.accessToken);
         }
       })
 
@@ -37,7 +52,7 @@ const Signin = () => {
   };
 
   const logout = () => {
-    signOut(authentication)
+    signOut(auth)
       .then(() => {
         // Destroy token from cookies.
         destroyCookie(null, "userToken");
