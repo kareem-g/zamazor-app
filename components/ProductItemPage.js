@@ -63,16 +63,17 @@ const ProductItemPage = (props) => {
                 backgroundColor: "#f9f9f9",
               }}
             >
-              <MagnifierContainer
+              <img src={props.image} alt="" />
+              {/* <MagnifierContainer
                 touchActivation={TOUCH_ACTIVATION.DOUBLE_TAP}
                 mouseActivation={MOUSE_ACTIVATION.DOUBLE_CLICK}
               >
-                <MagnifierPreview imageSrc="https://cdn.shopify.com/s/files/1/0004/0655/2612/products/WTV7115BL_4_Evo_XVT_Batting_Helmet_Matte_Black.png?v=1640842242" />
+                <MagnifierPreview imageSrc={props.image} />
                 <MagnifierZoom
                   style={{ height: "250px", width: "250px", marginTop: "10px" }}
-                  imageSrc="https://cdn.shopify.com/s/files/1/0004/0655/2612/products/WTV7115BL_4_Evo_XVT_Batting_Helmet_Matte_Black.png?v=1640842242"
+                  imageSrc={props.image}
                 />
-              </MagnifierContainer>
+              </MagnifierContainer> */}
             </Box>
           </Box>
 
@@ -93,7 +94,7 @@ const ProductItemPage = (props) => {
                 fontWeight: "bold",
               }}
             >
-              XVT™ Luxe fitted batting <br /> helmet
+              {props.title}
             </Typography>
 
             <Box component="div">
@@ -198,7 +199,7 @@ const ProductItemPage = (props) => {
                     fontWeight: "bold",
                   }}
                 >
-                  $ 59.99
+                  $ {props.price}
                 </Typography>
 
                 <Typography
@@ -289,7 +290,6 @@ const ProductItemPage = (props) => {
             </Box>
           </Box>
         </div>
-        <Reviews />
       </Box>
     </>
   );

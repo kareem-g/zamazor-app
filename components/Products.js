@@ -1,6 +1,5 @@
 import { Container, Grid, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
-import data from "../data.json";
 import React, { useEffect, useState } from "react";
 import {
   collection,
@@ -33,7 +32,7 @@ const Products = () => {
     fetchData();
   }, []);
 
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <div>
@@ -80,14 +79,14 @@ const Products = () => {
           {data &&
             data.map((i) => (
               <ProductCard
-                // key={i.id}
-                // id={i.id}
+                key={i.id}
+                id={i.id}
                 title={i.name}
                 count={i.count}
                 rate={i.rate}
                 image={i.img}
                 price={i.price}
-                link={`/product/${i.productPrice}/`}
+                link={`/product/${i.id}/`}
               />
             ))}
         </main>

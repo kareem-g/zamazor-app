@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import UserDashboard from "../components/UserDashboard";
+import AdminDashboard from "../components/AdminDashboard";
 
 const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <UserDashboard />
+      <AdminDashboard />
     </>
   );
 };

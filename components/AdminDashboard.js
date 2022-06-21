@@ -1,5 +1,18 @@
-import { Add, AddPhotoAlternate, Google, Image } from "@mui/icons-material";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import {
+  Add,
+  AddPhotoAlternate,
+  AttachMoney,
+  Google,
+  Image,
+} from "@mui/icons-material";
+import {
+  Box,
+  Button,
+  IconButton,
+  InputAdornment,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Field, Form, Formik } from "formik";
 import { TextField } from "formik-material-ui";
@@ -11,11 +24,14 @@ import {
   deleteDoc,
   doc,
   collection,
+  setDoc,
 } from "firebase/firestore";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-const UserDashboard = () => {
+const AdminDashboard = () => {
+  const dashify = require("dashify");
+
   const db = getFirestore();
   const ColProducts = collection(db, "products");
 
@@ -76,15 +92,26 @@ const UserDashboard = () => {
     console.log("Upload is complete! :", file.name);
     console.log(values);
 
-    addDoc(ColProducts, {
+    // addDoc(ColProducts, "hy", {
+    //   name: values.productName,
+    //   desc: values.productDesc,
+    //   price: parseFloat(values.productPrice),
+    //   img: data.img,
+    //   rate: values.rate,
+    //   count: values.count,
+    //   id: dashify(values.productName),
+    // }).catch((e) => {
+    //   console.log("error: ", e);
+    // });
+
+    setDoc(doc(ColProducts, dashify(values.productName)), {
       name: values.productName,
       desc: values.productDesc,
       price: parseFloat(values.productPrice),
       img: data.img,
       rate: values.rate,
       count: values.count,
-    }).catch((e) => {
-      console.log("error: ", e);
+      id: dashify(values.productName),
     });
     resetForm();
     setFile("");
@@ -184,17 +211,20 @@ const UserDashboard = () => {
                     <Field
                       type="number"
                       label="Rate"
+                      InputProps={{ inputProps: { min: 0, max: 5 } }}
                       name="rate"
                       variant="outlined"
                       fullWidth
                       component={TextField}
                     />
+
                     <br />
                     <br />
 
                     <Field
                       type="number"
                       label="Count"
+                      InputProps={{ inputProps: { min: 0, max: 10000 } }}
                       name="count"
                       variant="outlined"
                       fullWidth
@@ -228,4 +258,4 @@ const UserDashboard = () => {
   );
 };
 
-export default UserDashboard;
+export default AdminDashboard;

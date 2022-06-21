@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.3",
     "@mui/material": "^5.8.3",
+    "dashify": "^2.0.0",
     "firebase": "^9.8.3",
     "formik": "^2.2.9",
     "formik-material-ui": "^4.0.0-alpha.2",
@@ -25,6 +26,7 @@
     "react-image-magnifiers": "^1.4.0",
     "react-image-magnify": "^2.7.4",
     "react-responsive-carousel": "^3.2.23",
+    "save": "^2.5.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
